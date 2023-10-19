@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "consumer": [
+    {
+      "id": 1,
+      "name": "abc",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "abc2",
+      "email": "abc2@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "abc3",
+      "email": "abc3@gmail.com"
+    }
+  ],
+  "buyer": [
+    {
+      "id": 1,
+      "name": "abc",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "abc2",
+      "email": "abc2@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "abc3",
+      "email": "abc3@gmail.com"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
