@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+body{
+    background-image: url(../images/bg_login.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+/* heading */
+.heading{
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+}
+/* outer container */
+.container{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+/* nav */
+#nav_bar{
+    list-style-type: none;
+    display: none;
+    gap: max(20px, 20%);
+    scale: 0;
+}
+#sign_in, #sign_up{
+    all: unset;
+    font-size: 1.6rem;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 1em;
+    font-weight: 800;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+/* navigation */
+.navigation{
+    background-color: white;
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+}
+#login_anchor{
+    width: 100%;
+    min-width: 125px;
+    margin: 20px 0;
+    text-align: center;
+}
+#signin_anchor{
+    min-width: 125px;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+/* login */
+#login{
+    display: none;
+    background-color: white;
+    padding: 5vh;
+    width: 40vw;
+    min-width: 400px;
+}
+.field_set{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 0.5px solid rgb(183, 181, 181);
+    border-radius: 4px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 2vh;
+    width: 100%;
+}
+.field_set input{
+    all: unset;
+    position: relative;
+    height: 30px;
+    font-size: 3vh;
+    width: 100%;
+}
+.error{
+    border: 1px solid rgb(255, 129, 129);
+    padding: 5px;
+    margin: 6px;
+    width: 50%;
+    border-radius: 10px;
+    color: rgb(255, 129, 129);
+    background-color: rgba(247, 153, 153, 0.548);
+    display: none;
+}
+.login_button{
+    all: unset;
+    width: 100%;
+    cursor: pointer;
+    background-color: #070607;
+    color: white;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    margin-top: 2vh;
+}
+.material-icons-outlined{
+    color: rgb(93, 93, 93);
+    font-size: 30px;
+}
+/* sign up */
+#signup{
+    scale: 1;
+    padding: 5vh;
+    background-color: white;
+    width: 40vw;
+    min-width:40px;
+}

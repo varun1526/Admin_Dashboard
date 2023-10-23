@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400;1,600;1,700&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="heading">
+        <h1>Demo's inventory</h1>
+    </div>
+    <div class="container">
+        <nav id="nav_bar">
+            <li>
+                <button id="sign_in" >Sign in</button>
+            </li>
+            <li>
+                <button id="sign_up" >Sign up</button>
+            </li>
+        </nav>
+        <!-- navigation -->
+        <div class="navigation">
+            <div id="login_anchor">
+                Sign in
+            </div>
+            <div id="signin_anchor">
+                New Account
+            </div>
+        </div>
+        <div id="login">
+            <form action="" class="form">
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="login_username">
+                            <span class="material-icons-outlined" > person </span>
+                        </label>
+                        <input type="text" required placeholder="Enter your username" id="login_username" />
+                    </div>
+                    <div class="error" class="username_error">Enter a valid username</div>
+                </div>
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="login_password">
+                            <span class="material-icons-outlined"> key </span>
+                        </label>
+                        <input type="password" required placeholder="Enter your password" id="login_password"/>
+                    </div>
+                    <div class="error" class="password_error">Wrong Password! Try again</div>
+                </div>
+                <button class="login_button">
+                    Login
+                </button>
+            </form>
+        </div>
+        <div id="signup">
+            <form action="" class="form">
+                <div class="field_set">
+                    <label for="signup_username">
+                        <span class="material-icons-outlined"> person </span>
+                    </label>
+                    <input type="text" required placeholder="Enter your username" id="signup_username"/>
+                    <span class="error">Enter a valid username</span>
+                </div>
+                <div class="field_set">
+                    <label for="signup_email">
+                        <span class="material-icons-outlined"> email </span>
+                    </label>
+                    <input type="email" required placeholder="Enter your mail" id="signup_email"/>
+                    <span class="error">Enter a valid email</span>
+                </div>
+                <div class="field_set">
+                    <label for="signup_password">
+                        <span class="material-icons-outlined"> key </span>
+                    </label>
+                    <input type="password" required placeholder="Enter your password" id="signup_password"/>
+                    <span class="error">Wrong Password! Try again</span>
+                </div>
+                <div class="field_set">
+                    <label for="confirm_password">
+                        <span class="material-icons-outlined"> key </span>
+                    </label>
+                    <input type="text" required placeholder="Confirm Password" id="confirm_password"/>
+                    <span class="error">Enter a valid username</span>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="checkbox" required>
+                    <label for="checkbox">
+                        I agree to the Terms
+                    </label>
+                </div>
+                <button class="login_button">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>

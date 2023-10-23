@@ -12,6 +12,7 @@ body{
     background-color: var(--light-white);
     color: var(--light-grey);
     font-family: "Montserrat",sans-serif;
+    display: relative;
 }
 /* font icons */
 .material-icons-outlined{
@@ -187,10 +188,66 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
+    grid-template-rows: 1;
 }
 .heading{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.heading button{
+    background-color: #21232d;
+    color: white;
+    border: 0px;
+    padding: 8px;
+    border-radius :4px;
+}
+#consumer{
+    padding: 20px;
+    border: 1px solid #d2d2d3;
+    box-shadow: 0 6px 7px -4px rgba(0, 0 , 0, 0.2);
+}
+#buyer{
+    padding: 20px;
+    border: 1px solid #d2d2d3;
+    box-shadow: 0 6px 7px -4px rgba(0, 0 , 0, 0.2);
+}
+.form{
+    border: 1px solid #d2d2d3; 
+    padding: 50px;
+    position :relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    scale: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.absolute{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@keyframes example {
+    0%{
+        scale: 0.1;
+    }
+    50%{
+        scale: 0.5;
+    }
+    100%{
+        scale: 1.2;
+    }
 }
 @media screen and (max-width: 992px) {
     .grid-container{
@@ -219,10 +276,22 @@ main{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2,1fr);
     }
+    .lifeline{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
 }
 @media screen and (max-width:576px){
     .main-cards{
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(4,1fr);
     }
+}
+.data_set{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.data_set p{
+    color: black;
 }

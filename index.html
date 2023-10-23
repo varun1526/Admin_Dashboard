@@ -111,27 +111,42 @@
                 <div id="consumer">
                     <div class="heading">
                         <h2>Consumers</h2>
-                        <button onclick="addConsumer()">Add</button>
+                        <button id="consume">
+                            <span class="material-icons-outlined">person_add</span>
+                        </button>
+                        
                     </div>
-                    <div class="consumer-data">
+                    <hr>
+                    <div id="consumer-data">
 
                     </div>
                 </div>
                 <div id="buyer">
                     <div class="heading">
-                        <h2>Consumers</h2>
-                        <button onclick="addBuyer()">Add</button>
+                        <h2>Buyer</h2>
+                        <button onclick="addBuyer()">
+                            <span class="material-icons-outlined">person_add</span>
+                        </button>
                     </div>
-                    <div class="buyer-data">
-
+                    <hr>
+                    <div id="buyer-data">
                     </div>
                 </div>
             </div>
         </main>
     </div>
+    <div class="form">
+        <span class="material-icons-outlined absolute">close</span>
+        <form>
+            <input type="text">
+            <input type="emai">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <!-- chart library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
     <!-- javascript -->
     <script src="js/script.js"></script>
+    <script src="js/add.js"></script>
 </body>
 </html>
