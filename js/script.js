@@ -1,21 +1,32 @@
-const sidebar=document.getElementById("sidebar");
+const sidebar=document.getElementsByClassName("sidebar")[0];
 const logout=document.getElementById("logout");
+const products=document.getElementById("products");
+const purchase_order = document.getElementById("purchase-order");
+const sales_order = document.getElementById("sales-order");
+const main_container=document.getElementById("main-container");
+const product_btn=document.getElementById("product_btn");
+const purchase_btn=document.getElementById("purchase_btn");
+const sales_btn = document.getElementById("sales_btn");
+products.classList.add("hide");
+purchase_order.classList.add("hide");
+sales_order.classList.add("hide");
 let data;
+// fetching data
 (async function fetching(){
   let data=JSON.parse(sessionStorage.getItem("data"));
   createChart(data[0]);
 })()
 let openflag=false;
+// open sidebar
 function openSidebar() {
   if (!openflag) {
-    sidebar.classList.add("sidebar-responsive");
-    openflag = true;
+    sidebar.setAttribute("id","sidebar-responsive")
+    openflag = true;;
   }
 }
+//creating chart
 function createChart(data){
-  console.log(data);
   if(data){
-    // console.log(data);
     const month = data.bymonth.slice(-Math.min(6, data.bymonth.length));
     const prod = data.byproduct.slice(-Math.min(6, data.byproduct.length));
     var barchartOptions = {
@@ -117,9 +128,10 @@ function createChart(data){
     chart.render();
   }
 }
+// closing sidebar
 function closeSidebar(){
     if(openflag){
-        sidebar.classList.remove("sidebar-responsive");
+        sidebar.removeAttribute("id", "sidebar-responsive");
         openflag=false;
     }
 }
@@ -127,4 +139,10 @@ logout.addEventListener("click",(e)=>{
   e.preventDefault();
   sessionStorage.clear();
   window.location.href="./login/index.html"
+})
+// navigation
+let curr=main_container;
+product_btn.addEventListener("click",()=>{
+  products.classList.remove("hide");
+  main_container.classList.add("hide");
 })
