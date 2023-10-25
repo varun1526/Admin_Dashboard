@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
     />
     <link rel="stylesheet" href="style.css">
+    <script src="login2.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
         <h1>Demo's inventory</h1>
     </div>
     <div class="container">
-        <nav id="nav_bar">
+        <nav class="nav_bar">
             <li>
                 <button id="sign_in" >Sign in</button>
             </li>
@@ -47,7 +48,6 @@
                         </label>
                         <input type="text" required placeholder="Enter your username" id="login_username" />
                     </div>
-                    <div class="error" class="username_error">Enter a valid username</div>
                 </div>
                 <div class="input_Field">
                     <div class="field_set">
@@ -56,42 +56,49 @@
                         </label>
                         <input type="password" required placeholder="Enter your password" id="login_password"/>
                     </div>
-                    <div class="error" class="password_error">Wrong Password! Try again</div>
+                    <div class="error" id="password_error">Username or Password is wrong</div>
                 </div>
-                <button class="login_button">
+                <button id="login_button" class="login_button">
                     Login
                 </button>
             </form>
         </div>
         <div id="signup">
             <form action="" class="form">
-                <div class="field_set">
-                    <label for="signup_username">
-                        <span class="material-icons-outlined"> person </span>
-                    </label>
-                    <input type="text" required placeholder="Enter your username" id="signup_username"/>
-                    <span class="error">Enter a valid username</span>
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="signup_username">
+                            <span class="material-icons-outlined"> person </span>
+                        </label>
+                        <input type="text" required placeholder="Enter your username" id="signup_username"/>
+                    </div>
+                    <div class="error" id="username_exists">Username already exists</div>
                 </div>
-                <div class="field_set">
-                    <label for="signup_email">
-                        <span class="material-icons-outlined"> email </span>
-                    </label>
-                    <input type="email" required placeholder="Enter your mail" id="signup_email"/>
-                    <span class="error">Enter a valid email</span>
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="signup_email">
+                            <span class="material-icons-outlined"> email </span>
+                        </label>
+                        <input type="email" required placeholder="Enter your mail" id="signup_email"/>
+                    </div>
+                    <div class="error" id="email_exists">Email already exists</div>
                 </div>
-                <div class="field_set">
-                    <label for="signup_password">
-                        <span class="material-icons-outlined"> key </span>
-                    </label>
-                    <input type="password" required placeholder="Enter your password" id="signup_password"/>
-                    <span class="error">Wrong Password! Try again</span>
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="signup_password">
+                            <span class="material-icons-outlined"> key </span>
+                        </label>
+                        <input type="password" required placeholder="Enter your password" id="signup_password"/>
+                    </div>
                 </div>
-                <div class="field_set">
-                    <label for="confirm_password">
-                        <span class="material-icons-outlined"> key </span>
-                    </label>
-                    <input type="text" required placeholder="Confirm Password" id="confirm_password"/>
-                    <span class="error">Enter a valid username</span>
+                <div class="input_Field">
+                    <div class="field_set">
+                        <label for="confirm_password">
+                            <span class="material-icons-outlined"> key </span>
+                        </label>
+                        <input type="password" required placeholder="Confirm Password" id="confirm_password"/>
+                    </div>
+                    <div class="error" id="password_match">Password doesn't match</div>
                 </div>
                 <div>
                     <input type="checkbox" name="" id="checkbox" required>
@@ -99,11 +106,12 @@
                         I agree to the Terms
                     </label>
                 </div>
-                <button class="login_button">
+                <button id="signup_button" class="login_button">
                     Login
                 </button>
             </form>
         </div>
     </div>
+    <script src="./login.js"></script>
   </body>
 </html>

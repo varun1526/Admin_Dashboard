@@ -26,11 +26,11 @@ body{
     margin-top: 5vh;
 }
 /* nav */
-#nav_bar{
+.nav_bar{
     list-style-type: none;
-    display: none;
+    display: flex;
     gap: max(20px, 20%);
-    scale: 0;
+    margin-top: 20vh;
 }
 #sign_in, #sign_up{
     all: unset;
@@ -42,29 +42,31 @@ body{
     cursor: pointer;
     color: white;
     text-align: center;
+    min-width: 100px;
 }
 /* navigation */
 .navigation{
     background-color: white;
-    display: flex;
     width: 40vw;
     justify-content: space-between;
+    display:flex;
 }
 #login_anchor{
     width: 100%;
     min-width: 125px;
-    margin: 20px 0;
+    padding: 20px 0;
     text-align: center;
+    cursor: pointer;
 }
 #signin_anchor{
     min-width: 125px;
     width: 100%;
-    margin: 20px 0;
+    padding: 20px 0;
     text-align: center;
+    cursor:pointer;
 }
 /* login */
 #login{
-    display: none;
     background-color: white;
     padding: 5vh;
     width: 40vw;
@@ -90,13 +92,13 @@ body{
 }
 .error{
     border: 1px solid rgb(255, 129, 129);
-    padding: 5px;
+    padding: 10px;
     margin: 6px;
-    width: 50%;
+    width: 80%;
+    font-size: 3vh;
     border-radius: 10px;
     color: rgb(255, 129, 129);
     background-color: rgba(247, 153, 153, 0.548);
-    display: none;
 }
 .login_button{
     all: unset;
@@ -116,9 +118,16 @@ body{
 }
 /* sign up */
 #signup{
-    scale: 1;
     padding: 5vh;
     background-color: white;
     width: 40vw;
     min-width:40px;
+}
+/* hide */
+.hide{
+    display:none;
+}
+.active{
+    background-color:  grey;
+    color: white;
 }

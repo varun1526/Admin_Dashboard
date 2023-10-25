@@ -23,40 +23,7 @@ absolute[0].addEventListener("click",()=>{
     main1[0].style.opacity=1;
     main1[0].style.overflow="auto";
 })
-let con=[
-    {
-      id: 1,
-      name: "abc",
-      email: "abc@gmail.com"
-    },
-    {
-      id: 2,
-      name: "abc2",
-      email: "abc2@gmail.com"
-    },
-    {
-      id: 3,
-      name: "abc3",
-      email: "abc3@gmail.com"
-    }
-]
-let buy = [
-  {
-    id: 1,
-    name: "abc",
-    email: "abc@gmail.com",
-  },
-  {
-    id: 2,
-    name: "abc2",
-    email: "abc2@gmail.com",
-  },
-  {
-    id: 3,
-    name: "abc3",
-    email: "abc3@gmail.com",
-  },
-];
+let data2=JSON.parse(sessionStorage.getItem("data"));
 function getData(data){
     return (data.map((item)=>{
         return `<div class="data_set">
@@ -70,6 +37,12 @@ function getData(data){
         </div>`;
     })).join(' ');
 }
-
-buyer_data.innerHTML=getData(con);
-consumer_data.innerHTML=getData(buy);
+(function render(){
+  if(data2.length==0){
+    return;
+  }
+  let con=data2[0].consumer;
+  let buy=data2[0].buyer;
+  buyer_data.innerHTML=getData(con);
+  consumer_data.innerHTML=getData(buy);
+})()
