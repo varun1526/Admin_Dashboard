@@ -2,24 +2,24 @@ const buyer=document.getElementById("buyer");
 const consumer=document.getElementById("consumer");
 const main1=document.getElementsByTagName("main");
 const btn_consume=document.getElementById("consume");
-const form= document.getElementsByClassName("form");
-const absolute=document.getElementsByClassName("absolute");
+const add= document.getElementById("add");
+const close2=document.getElementById("close");
 const body=document.getElementsByTagName("body")[0];
 const buyer_data=document.getElementById("buyer-data");
 const consumer_data=document.getElementById("consumer-data");
 btn_consume.addEventListener("click",(e)=>{
-    form[0].style.top=""+(e.offsetY+(window.innerHeight/2))+"px";
-    form[0].style.left = "" + (e.offsetX  +window.innerWidth / 2) + "px";
+    add.style.top=""(window.innerHeight/2)+"px";
+    add.style.left = "" + (window.innerWidth / 2) + "px";
     main1[0].style.opacity=0;
-    form[0].style.animation="example 0.4s linear";
-    form[0].style.scale = "1";
+    add.style.animation="example 0.4s linear";
+    add.style.scale = "1";
     main1[0].style.overflow="hidden";
 });
-absolute[0].addEventListener("click",()=>{
-    form[0].style.scale=0;
-    form[0].style.top="0px";
-    form[0].style.left = "0px";
-    form[0].style.animation = "none";
+close2.addEventListener("click",()=>{
+    add.style.scale="0";
+    add.style.top="0px";
+    add.style.left = "0px";
+    add.style.animation = "none";
     main1[0].style.opacity=1;
     main1[0].style.overflow="auto";
 })
@@ -31,8 +31,8 @@ function getData(data){
             <p>${item.name}</p>
             <p>${item.email}</p>
             <div>
-                <button id=${item.id} class="btn edit">Edit</button>
-                <button id="${item.id}" class="btn delete">Delete</button>
+                <button class="btn ${item.id}">Edit</button>
+                <button class="btn ${item.id}">Delete</button>
             </div>
         </div>`;
     })).join(' ');

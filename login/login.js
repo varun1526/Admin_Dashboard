@@ -143,7 +143,12 @@ async function check(){
         confirm_password.value = "";
     }
 }
-signup_button.addEventListener("click",(e)=>{
+signup_button.addEventListener("click",async(e)=>{
     e.preventDefault();
+    if(signup_password.value!=confirm_password.value){
+        password_match.classList.remove("hide");
+        await new Promise((res,rep)=>{setTimeout(()=>{password_match.classList.add("hide");res();},2000)});
+        return;
+    }
     check();
 })

@@ -7,6 +7,7 @@ const main_container=document.getElementById("main-container");
 const product_btn=document.getElementById("product_btn");
 const purchase_btn=document.getElementById("purchase_btn");
 const sales_btn = document.getElementById("sales_btn");
+const prod_data=document.getElementById("prod-data");
 products.classList.add("hide");
 purchase_order.classList.add("hide");
 sales_order.classList.add("hide");
@@ -15,16 +16,33 @@ let data;
 (async function fetching(){
   let data=JSON.parse(sessionStorage.getItem("data"));
   createChart(data[0]);
+  updateProductData(data[0].byproduct);
 })()
 let openflag=false;
 // open sidebar
-function openSidebar() {
+function openSidebar(){
   if (!openflag) {
     sidebar.setAttribute("id","sidebar-responsive")
     openflag = true;;
   }
 }
 //creating chart
+function updateProductData(data){
+  let x=data.map((item)=>{
+    return `
+        <tr>
+          <td>${item.id}</td>
+          <td>${item.prod}</td>
+          <td>${item.cnt}</td>
+          <td>
+              <button class="edit ${item.id}">Edit</button>
+              <button class="del ${item.id}">Delete</button>
+          </td>
+        </tr>
+      `;
+  })
+  prod_data.innerHTML=prod_data.innerHTML+x.join('\n');
+}
 function createChart(data){
   if(data){
     const month = data.bymonth.slice(-Math.min(6, data.bymonth.length));
@@ -143,6 +161,8 @@ logout.addEventListener("click",(e)=>{
 // navigation
 let curr=main_container;
 product_btn.addEventListener("click",()=>{
+  console.log(products);
   products.classList.remove("hide");
+  console.log(main_container);
   main_container.classList.add("hide");
 })

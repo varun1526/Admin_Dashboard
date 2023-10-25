@@ -14,8 +14,14 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
     />
     <link rel="stylesheet" href="style.css">
-    <script src="login2.js"></script>
+    <script>
+        let session_data = sessionStorage.getItem("data");
+        if (session_data != undefined) {
+            window.location.href = "../index.html";
+        }
+    </script>
     <title>Document</title>
+
   </head>
   <body>
     <div class="heading">
@@ -76,7 +82,7 @@
                 </div>
                 <div class="input_Field">
                     <div class="field_set">
-                        <label for="signup_email">
+                      <label for="signup_email">
                             <span class="material-icons-outlined"> email </span>
                         </label>
                         <input type="email" required placeholder="Enter your mail" id="signup_email"/>

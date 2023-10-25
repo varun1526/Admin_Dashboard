@@ -308,3 +308,23 @@ main{
     padding: 1vh;
     border-radius: 5px;
 }
+#products{
+    margin: 20px;
+    padding: 20px;
+}
+table,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    padding: 10px 20px;
+    font-size: 4vh;
+    text-align: justify;
+    font-weight: 500;
+}
+th{
+    font-weight: 800;
+}
+.hide{
+    display:none;
+}
