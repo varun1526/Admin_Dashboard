@@ -44,9 +44,6 @@ async function addData(userData){
     catch(e){
         alert("network error");
     }
-    finally{
-        sign_up.reset()
-    }
 }
 function createUser(){
     let userData = {
@@ -87,7 +84,7 @@ sign_in.addEventListener("click",()=>{
     navigation[0].classList.remove("hide");
     login_anchor.classList.add("active");
     curr=login_anchor;
-})
+})  
 sign_up.addEventListener("click", () => {
     nav_bar[0].classList.add("hide");
     signup.classList.remove("hide");

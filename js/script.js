@@ -46,7 +46,7 @@ function updateProductData(data){
 function createChart(data){
   if(data){
     const month = data.bymonth.slice(-Math.min(6, data.bymonth.length));
-    const prod = data.byproduct.slice(-Math.min(6, data.byproduct.length));
+    const prod = data.byproduct.slice(0,Math.min(6, data.byproduct.length));
     var barchartOptions = {
       series: [
         {

@@ -124,7 +124,7 @@
                 <div id="buyer">
                     <div class="heading">
                         <h2>Buyer</h2>
-                        <button onclick="addBuyer()">
+                        <button id="buyer">
                             <span class="material-icons-outlined">person_add</span>
                         </button>
                     </div>
@@ -155,9 +155,11 @@
     <div class="form" id="add">
         <span class="material-icons-outlined absolute" id="close">close</span>
         <form>
-            <input type="text">
-            <input type="emai">
-            <button type="submit">Submit</button>
+             <label for="add_name">Name</label>
+            <input type="text" id="add_name" name="name" placeholder="Enter your name..">
+            <label for="add_email">Email</label>
+            <input type="email" id="add_email" name="email" placeholder="Enter your email..">
+            <button type="submit" id="add_">Submit</button>
         </form>
     </div>
     <div class="form" id="product_edit">
