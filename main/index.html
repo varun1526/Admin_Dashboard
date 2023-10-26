@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="../css/main/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400;1,600;1,700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+</head>
+<body>
+    <!-- outer container -->
+    <div class="grid-container">
+        <!-- header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+                <button id="logout">Logout</button>
+            </div>
+        </header>
+        <!-- side bar -->
+        <aside class="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">inventory</span>Demo's inventory
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item" id="dashboard_btn">
+                    <span class="material-icons-outlined">dashboard</span>Dashboard
+                </li>
+                <li class="sidebar-list-item" id="product_btn">
+                    <span class="material-icons-outlined">inventory_2</span>Products
+                </li>
+                <li class="sidebar-list-item" id="invent_btn">
+                    <span class="material-icons-outlined">fact_check</span>Inventory
+                </li>
+                <li class="sidebar-list-item" id="purchase_btn">
+                    <span class="material-icons-outlined">add_shopping_cart</span>Purchase orders
+                </li>
+                <li class="sidebar-list-item" id="sales_btn">
+                    <span class="material-icons-outlined">shopping_cart</span>Sales orders
+                </li>
+                <li class="sidebar-list-item" id="product_btn">
+                    <span class="material-icons-outlined">poll</span>Reports
+                </li>
+                <li class="sidebar-list-item" id="product_btn">
+                    <span class="material-icons-outlined">settings</span>Settings
+                </li>
+            </ul>
+        </aside>    
+        <!-- main-container -->
+        <main>
+            <div id="main-container">
+                <div class="main-title">
+                    <p class="font-weight-bold">DASHBOARD</p>
+                </div>
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">PRODUCTS</p>
+                            <span class="material-icons-outlined text-blue">inventory_2</span>
+                        </div>
+                        <span class="text-primary font-weight-bold" id="prod">0</span>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">PURCHASE ORDERS</p>
+                            <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+                        </div>
+                        <span class="text-primary font-weight-bold" id="purch">0</span>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">SALES ORDERS</p>
+                            <span class="material-icons-outlined text-green">shopping_cart</span>
+                        </div>
+                        <span class="text-primary font-weight-bold" id="sale">0</span>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">INVENTORY ALERTS</p>
+                            <span class="material-icons-outlined text-red">notification_important</span>
+                        </div>
+                        <span class="text-primary font-weight-bold" >24</span>
+                    </div>
+                </div>
+                <div class="charts">
+                <div class="charts-card">
+                    <div class="chart-title">Top 5 products</div>
+                    <div id="bar-chart"></div>
+                </div>
+                <div class="charts-card">
+                    <div class="chart-title">Purchase and Sales Orders</div>
+                    <div id="area-chart"></div>
+                </div>
+            </div>
+            <div class="lifeline">
+                <div id="consumer">
+                    <div class="heading">
+                        <h2>Consumers</h2>
+                        <button id="consume">
+                            <span class="material-icons-outlined">person_add</span>
+                        </button>
+                        
+                    </div>
+                    <hr>
+                    <div id="consumer-data">
+
+                    </div>
+                </div>
+                <div id="buyer_">
+                    <div class="heading">
+                        <h2>Buyer</h2>
+                        <button id="buyer">
+                            <span class="material-icons-outlined">person_add</span>
+                        </button>
+                    </div>
+                    <hr>
+                    <div id="buyer-data">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="products">
+                <table id="prod-data">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Count</th>
+                        <th>Operations</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="purchase-order">
+
+            </div>
+            <div id="sales-order">
+
+            </div>
+        </main>
+    </div>
+    <div class="form" id="add">
+        <span class="material-icons-outlined absolute" id="close">close</span>
+        <form>
+             <label for="add_name">Name</label>
+            <input type="text" id="add_name" name="name" placeholder="Enter your name..">
+            <label for="add_email">Email</label>
+            <input type="email" id="add_email" name="email" placeholder="Enter your email..">
+            <button type="submit" id="add_">Submit</button>
+        </form>
+    </div>
+    <div class="form" id="product_edit">
+        <span class="material-icons-outlined absolute" id="edit_close">close</span>
+        <form>
+            <input type="text">
+            <input type="emai">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- chart library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.44.0/apexcharts.min.js"></script>
+    <!-- javascript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/add.js"></script>
+    <script src="../js/product.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     font-family: "Montserrat",sans-serif;
 }
 body{
-    background-image: url(../images/bg_login.avif);
+    background-image: url(../assets/bg_login.avif);
     background-repeat: no-repeat;
     background-size: cover;
     overflow-y: hidden;

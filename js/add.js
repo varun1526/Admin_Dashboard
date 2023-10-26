@@ -11,7 +11,7 @@ const add_btn = document.getElementById("add_");
 const add_name = document.getElementById("add_name");
 const add_email = document.getElementById("add_email");
 const btn_buyer=document.getElementById("buyer");
-
+const edit_btn=document.getElementsByClassName("edit_btn");
 let openedBy = undefined;
 btn_consume.addEventListener("click", (e) => {
   add.style.top = "" + window.innerHeight / 2 + "px";
@@ -41,7 +41,7 @@ close2.addEventListener("click", () => {
 });
 let data2 = JSON.parse(sessionStorage.getItem("data"));
 console.log(data2);
-function getData(data) {
+function getData(data,val) {
   return data
     .map((item) => {
       return `<div class="data_set">
@@ -49,8 +49,8 @@ function getData(data) {
             <p>${item.name}</p>
             <p>${item.email}</p>
             <div>
-                <button class="btn ${item.id}">Edit</button>
-                <button class="btn ${item.id}">Delete</button>
+                <button class="edit_btn ${val} ${item.id}">Edit</button>
+                <button class="del_btn ${val} ${item.id}">Delete</button>
             </div>
         </div>`;
     })
@@ -62,8 +62,8 @@ function getData(data) {
   }
   let con = data2[0].consumer;
   let buy = data2[0].buyer;
-  buyer_data.innerHTML = getData(buy);
-  consumer_data.innerHTML = getData(con);
+  buyer_data.innerHTML = getData(buy,"buyer");
+  consumer_data.innerHTML = getData(con,"consumer");
 })();
 function checkData(username, email) {
   let x = false;
@@ -91,7 +91,7 @@ async function sendData(username, email) {
   if(response.ok){
     console.log(data2[0]);
     sessionStorage.setItem("data",JSON.stringify(data2));
-    window.location.href="./login/index.html";
+    window.location.href="../index.html";
   }
 }
 add_btn.addEventListener("click", (e) => {

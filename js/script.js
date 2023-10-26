@@ -7,15 +7,25 @@ const main_container=document.getElementById("main-container");
 const product_btn=document.getElementById("product_btn");
 const purchase_btn=document.getElementById("purchase_btn");
 const sales_btn = document.getElementById("sales_btn");
+const dashboard_btn = document.getElementById("dashboard_btn");
 const prod_data=document.getElementById("prod-data");
+const prod = document.getElementById("prod");
+const purch = document.getElementById("purch");
+const sale = document.getElementById("sale");
 products.classList.add("hide");
 purchase_order.classList.add("hide");
 sales_order.classList.add("hide");
 let data;
+
 // fetching data
-(async function fetching(){
+(function fetching(){
   let data=JSON.parse(sessionStorage.getItem("data"));
   createChart(data[0]);
+  prod.innerText=data[0].byproduct.length;
+  let purch_sum=0,sale_sum=0;
+  data[0].bymonth.filter(item=>{purch_sum+=Number(item.purchase);sale_sum+=Number(item.sales);})
+  purch.innerText=purch_sum;
+  sale.innerText=sale_sum;
   updateProductData(data[0].byproduct);
 })()
 let openflag=false;
@@ -156,13 +166,18 @@ function closeSidebar(){
 logout.addEventListener("click",(e)=>{
   e.preventDefault();
   sessionStorage.clear();
-  window.location.href="./login/index.html"
+  window.location.href="../index.html"
 })
 // navigation
 let curr=main_container;
 product_btn.addEventListener("click",()=>{
-  console.log(products);
   products.classList.remove("hide");
-  console.log(main_container);
   main_container.classList.add("hide");
+  curr=products;
+})
+console.log(dashboard_btn);
+dashboard_btn.addEventListener("click",()=>{
+  console.log("first")
+  curr.classList.add("hide");
+  main_container.classList.remove("hide");
 })
